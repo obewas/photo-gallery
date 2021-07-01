@@ -2,13 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Category(models.Model):
-    cats = [
-        ('T', 'Travel'), ('F', 'Family'), ('L', 'Lifestyle'),('S', 'Sports'), 
-    ]
-    name = models.CharField(choices=cats, max_length=100)
+    
+    name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+        
         return self.name
 
 class Location(models.Model):
