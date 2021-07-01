@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% block content%}
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{photo.image.url }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{photo.label}}</h5>
+      <p class="card-text">{{photo.description}}</p>
+      <a href="{% url 'photo_list' %}" class="btn btn-primary">Close</a>
+    </div>
+  </div>
+  {% endblock %}

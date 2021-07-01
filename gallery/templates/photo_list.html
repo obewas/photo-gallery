@@ -12,6 +12,10 @@
             <button class="btn btn-default filter-button" data-filter="sprinkle">Fashion</button>
             <button class="btn btn-default filter-button" data-filter="spray">Sports</button>
             <button class="btn btn-default filter-button" data-filter="irrigation">Family</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation"><form method="GET" action="" id="searchform">
+                <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+            </form></button>
+            
         </div>
         <br/>
 
@@ -26,7 +30,7 @@
         <h5 class="card-title">Title: {{photo.label}}</h5>
         <p class="card-text">Caption: {{photo.description}}</p>
         <p class="card-footer"><small class="text-muted">Date Taken: {{photo.year_taken}}</small></p>
-        <a href="#" class="btn btn-primary">Details</a>
+        <a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a>
         
       </div>
     </div>

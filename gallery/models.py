@@ -19,11 +19,11 @@ class Location(models.Model):
 
 class Image(models.Model):
     label = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="photos/")
+    image = models.ImageField(upload_to="photos/", default='logo.png')
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    year_taken = models.DateField(auto_now_add=False)
+    year_taken = models.DateField(auto_now_add=False, null=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
