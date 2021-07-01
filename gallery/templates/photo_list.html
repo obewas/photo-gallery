@@ -1,4 +1,24 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block content %}
+<div class="card-group" style="width: 18rem; height: 18rem;">
+    <div class="card">
+
+    {% for photo in photos %}
+    <h5 class="card-title">Title: {{photo.label}}</h5>
+    <img class="card-img-top" src="{{photo.image.url}}" alt="Card image cap">
+    <div class="card-body">
+      
+      <p class="card-text">Caption: {{photo.description}}</p>
+      <p class="card-text">Date taken: {{photo.year_taken}}</p>
+      
+    <a href="#" class="btn btn-primary">Details</a>
+    <hr>
+    </div>
+    {% endfor %}
+</div>
+  </div>
+
+
+
 {% endblock %}
