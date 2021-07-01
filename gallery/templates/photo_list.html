@@ -1,24 +1,40 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block content %}
-<div class="card-group" style="width: 18rem; height: 18rem;">
-    <div class="card">
 
-    {% for photo in photos %}
-    <h5 class="card-title">Title: {{photo.label}}</h5>
-    <img class="card-img-top" src="{{photo.image.url}}" alt="Card image cap">
-    <div class="card-body">
-      
-      <p class="card-text">Caption: {{photo.description}}</p>
-      <p class="card-text">Date taken: {{photo.year_taken}}</p>
-      
-    <a href="#" class="btn btn-primary">Details</a>
-    <hr>
-    </div>
-    {% endfor %}
+<br>
+<div class="container">
+    <div class="row">
+        <h5>Categories</h5>
+        <div class="filters">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="hdpe">Travel</button>
+            <button class="btn btn-default filter-button" data-filter="sprinkle">Fashion</button>
+            <button class="btn btn-default filter-button" data-filter="spray">Sports</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation">Family</button>
+        </div>
+        <br/>
+
 </div>
+{% for photo in photos %}
+<div class="card border-primary mb-3" style="max-width: 18rem; display:grid;">
+<div class="card-group">
+    
+    <div class="card">
+      <img class="card-img-top" src="{{ photo.image.url }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Title: {{photo.label}}</h5>
+        <p class="card-text">Caption: {{photo.description}}</p>
+        <p class="card-footer"><small class="text-muted">Date Taken: {{photo.year_taken}}</small></p>
+        <a href="#" class="btn btn-primary">Details</a>
+        
+      </div>
+    </div>
+    </div>
   </div>
-
+  
+  
+ {% endfor %}
 
 
 {% endblock %}
