@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^photo/(\d+)',views.single_photo,name ='photo'),
     url(r'^create/$', views.create_photo, name='create'),
     url(r'^delete/(\d+)$', views.delete_photo, name='delete'),
+    path('update/<int:photo_id>/', views.update_photo,
+        name='update'),
 ]

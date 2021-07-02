@@ -3,6 +3,7 @@ from .models import Image, Category
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from .forms import PhotoCreateForm
+from django.shortcuts import get_object_or_404
 # Create your views here.
 def photo_list(request):
     photos = Image.objects.all()
@@ -39,4 +40,19 @@ def delete_photo(request, photo_id):
     photo.delete()
     return redirect('/')
 
-
+def update_photo(request, photo_id):
+    photo = get_object_or_404(Image, pk=photo_id)
+    if request.method == 'POST':
+        form = PhotoCreateForm(request.POST, instance=photo)
+        if form.is_valid():
+        #label=form.cleaned_data['label']
+        #image = form.cleaned_data['image']
+        #description = form.cleaned_data['description']
+        #category = form.cleaned_data['category']
+       # location = form.cleaned_data['location']
+        #year_taken = form.cleaned_data['year_taken']
+            form.save()
+            return redirect('/')
+    else:
+        form = PhotoCreateForm(instance=photo)
+    return render(request, 'update_photo.html', {'form':form})

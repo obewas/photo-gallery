@@ -32,6 +32,7 @@
                 <p class="card-footer"><small class="text-muted">Date Taken: {{photo.year_taken}}</small></p>
                 <a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a>
                 <a href="{% url 'delete' photo.pk %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'update' photo.pk %}" class="btn btn-success">Update</a>
             </div>
         </div>
     </div>
