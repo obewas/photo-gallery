@@ -56,3 +56,16 @@ def update_photo(request, photo_id):
     else:
         form = PhotoCreateForm(instance=photo)
     return render(request, 'update_photo.html', {'form':form})
+
+def get_photo_by_id(request, photo_id):
+    photo = Image.objects.filter(pk=photo_id)
+    context = {
+        'photo':photo
+    }
+    return render(request, 'get_photo_by_id.html', context)
+
+def search_photo(request):
+    if request.method == 'GET':
+        search = request.GET.get('search')
+        photo = Image.objects.filter(category=search)
+        return render(request, 'search.html', {'photo':photo})

@@ -12,9 +12,11 @@
             <button class="btn btn-default filter-button" data-filter="sprinkle">Fashion</button>
             <button class="btn btn-default filter-button" data-filter="spray">Sports</button>
             <button class="btn btn-default filter-button" data-filter="irrigation">Family</button>
-            <button class="btn btn-default filter-button" data-filter="irrigation"><form method="GET" action="" id="searchform">
-                <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
-            </form></button>
+            
+                <form method="GET" action="{% url 'search' %}" id="searchform">
+                <input class="searchfield" id="searchbox" name="search" type="text" placeholder="Search..."/>
+                <button type="submit">Submit></button>
+               </form>
             
         </div>
         <br/>

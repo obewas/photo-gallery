@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+{% if photo %}
+<div class="center">
+    <h5>Search Result</h5>
+    {% for item in photo %}
+    <p>{{item.label}}</p>
+    <img src="{{ 'item.image.url '}}">
+
+    {% endfor %}
+</div>
+
+
+{% endif %}
+{% endblock %}
