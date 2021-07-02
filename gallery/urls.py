@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.photo_list, name='photo_list'),
     url(r'^photo/(\d+)',views.single_photo,name ='photo'),
     url(r'^create/$', views.create_photo, name='create'),
+    url(r'^delete/(\d+)$', views.delete_photo, name='delete'),
 ]

@@ -21,21 +21,21 @@
 
 </div>
 {% for photo in photos %}
-<div class="card border-primary mb-3" style="max-width: 18rem; display:grid;">
-<div class="card-group">
+<div class="card border-primary mb-3" style="width: 18rem; display:grid;">
+    <div class="card-group">
     
-    <div class="card">
-      <img class="card-img-top" src="{{ photo.image.url }}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Title: {{photo.label}}</h5>
-        <p class="card-text">Caption: {{photo.description}}</p>
-        <p class="card-footer"><small class="text-muted">Date Taken: {{photo.year_taken}}</small></p>
-        <a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a>
-        
-      </div>
+        <div class="card">
+            <img class="card-img-top img-fluid" src="{{ photo.image.url }}" alt="Card image cap"> 
+            <div class="card-body">
+                <h5 class="card-title">Title: {{photo.label}}</h5>
+                <p class="card-text">Caption: {{photo.description}}</p>
+                <p class="card-footer"><small class="text-muted">Date Taken: {{photo.year_taken}}</small></p>
+                <a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a>
+                <a href="{% url 'delete' photo.pk %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
     </div>
-    </div>
-  </div>
+</div>
   
   
  {% endfor %}

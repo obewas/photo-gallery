@@ -20,7 +20,7 @@ def single_photo(request, photo_id):
     return render(request, 'photo.html', {'photo':photo})
 
 def create_photo(request):
-    form = PhotoCreateForm(request.POST)
+    form = PhotoCreateForm(request.POST, request.FILES)
     if form.is_valid():
         label=form.cleaned_data['label']
         image = form.cleaned_data['image']
@@ -33,4 +33,10 @@ def create_photo(request):
         form = PhotoCreateForm()
 
     return render(request, 'create_photo.html', {'form':form})
+
+def delete_photo(request, photo_id):
+    photo = Image.objects.get(pk=photo_id)
+    photo.delete()
+    return redirect('/')
+
 
