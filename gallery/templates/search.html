@@ -10,12 +10,34 @@
     {% endif %}
 
   </div>
-
-  <div class="row">
-      <table></table>
-
   {% if photos %}
-    {% for photo in photos %}
+  <div class="row">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Label</th>
+            <th>Caption</th>
+            <th>Category</th>
+            <th>Date Taken</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        {% for photo in photos %}
+        <tbody>
+          <tr>
+            <td>{{photo.label}}</td>
+            <td>{{photo.description}}</td>
+            <td>{{photo.category}}</td>
+            <td>{{photo.year_taken}}</td>
+            <td><a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a></td>
+          </tr>
+        </tbody>
+
+      </table>
+
+  
+    
       <div class="col-sm-6 col-md-3">
           <h1>{{photo.category}}</h1>
       </div>

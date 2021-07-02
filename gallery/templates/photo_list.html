@@ -12,20 +12,10 @@
             <button class="btn btn-default filter-button" data-filter="sprinkle">Fashion</button>
             <button class="btn btn-default filter-button" data-filter="spray">Sports</button>
             <button class="btn btn-default filter-button" data-filter="irrigation">Family</button>
-            <div>
-                <form method="GET" action="{% url 'search' %}" id="searchform">
-                    <input class="searchfield" id="searchbox" name="search" type="text" placeholder="Search Photo"/>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                   </form>
-
-            </div>
-                
-               
             
         </div>
-        <br/>
 
-</div>
+    </div>
 {% for photo in photos %}
 <div class="card border-primary mb-3" style="width: 18rem; display:grid;">
     <div class="card-group">
