@@ -1,9 +1,11 @@
+from django.db.models import query
 from django.shortcuts import redirect, render
 from .models import Image, Category
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from .forms import PhotoCreateForm
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
 # Create your views here.
 def photo_list(request):
     photos = Image.objects.all()
@@ -64,8 +66,18 @@ def get_photo_by_id(request, photo_id):
     }
     return render(request, 'get_photo_by_id.html', context)
 
-def search_photo(request):
-    if request.method == 'GET':
-        search = request.GET.get('search')
-        photo = Image.objects.filter(category=search)
-        return render(request, 'search.html', {'photo':photo})
+
+def search_results(request):
+
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        print(search_term)
+        searched_photos = Image.search_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"photos": searched_photos})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
+        

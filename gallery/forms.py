@@ -8,5 +8,7 @@ class PhotoCreateForm(forms.ModelForm):
         model = Image
         fields = "__all__"
 
+        
+
 
 

@@ -1,19 +1,25 @@
-{% extends 'base.html' %}
-{% load static %}
-
+{%extends 'base.html'%} 
 {% block content %}
+<div class="container">
 
+  <div class="row">
+    {% if photos %}
+      <h2>Found {{ photos|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 photos for the category {{message}}</h2>
+    {% endif %}
 
-{% if photo %}
-<div class="center">
-    <h5>Search Result</h5>
-    {% for item in photo %}
-    <p>{{item.label}}</p>
-    <img src="{{ 'item.image.url '}}">
+  </div>
 
+  <div class="row">
+
+  {% if photos %}
+    {% for photo in photos %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{photo.label}}</h1>
+      </div>
     {% endfor %}
+  {% endif %}
+  </div>
 </div>
-
-
-{% endif %}
 {% endblock %}

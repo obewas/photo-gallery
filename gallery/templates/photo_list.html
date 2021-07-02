@@ -12,11 +12,15 @@
             <button class="btn btn-default filter-button" data-filter="sprinkle">Fashion</button>
             <button class="btn btn-default filter-button" data-filter="spray">Sports</button>
             <button class="btn btn-default filter-button" data-filter="irrigation">Family</button>
-            
+            <div>
                 <form method="GET" action="{% url 'search' %}" id="searchform">
-                <input class="searchfield" id="searchbox" name="search" type="text" placeholder="Search..."/>
-                <button type="submit">Submit></button>
-               </form>
+                    <input class="searchfield" id="searchbox" name="search" type="text" placeholder="Search Photo"/>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                   </form>
+
+            </div>
+                
+               
             
         </div>
         <br/>
@@ -31,6 +35,7 @@
             <div class="card-body">
                 <h5 class="card-title">Title: {{photo.label}}</h5>
                 <p class="card-text">Caption: {{photo.description}}</p>
+                <p class="card-text">Category: {{photo.category}}</p>
                 <p class="card-footer"><small class="text-muted">Date Taken: {{photo.year_taken}}</small></p>
                 <a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a>
                 <a href="{% url 'delete' photo.pk %}" class="btn btn-danger">Delete</a>
