@@ -6,6 +6,7 @@ from django.http import Http404
 from .forms import PhotoCreateForm
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from .filters import ImageFilter
 # Create your views here.
 def photo_list(request):
     photos = Image.objects.all()
@@ -79,3 +80,7 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+def location_filter(request):
+    filter = ImageFilter(request.GET, queryset=Image.objects.all())
+    return render(request, 'filter.html', {'filter': filter})
