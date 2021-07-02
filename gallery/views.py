@@ -71,13 +71,11 @@ def search_results(request):
 
     if 'photo' in request.GET and request.GET["photo"]:
         search_term = request.GET.get("photo")
-        print(search_term)
-        searched_photos = Image.search_by_category(search_term)
+        searched_articles = Image.search_by_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'search.html',{"message":message,"photos": searched_photos})
+        return render(request, 'search.html',{"message":message,"photos": searched_articles})
 
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
-        
