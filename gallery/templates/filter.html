@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 {% block content %}
 
-<p>{{filter}}</p>
+<div class="container">
+    <form method="GET">
+      {{ filter.form }}
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <ul>
+        {% for photo in filter.queryset %}
+        <li>
+            <a href="{% url 'photo' photo.pk %}"></a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
 
 {% endblock %}
