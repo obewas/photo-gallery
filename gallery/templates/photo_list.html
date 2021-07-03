@@ -21,7 +21,7 @@
     <div class="card-group">
     
         <div class="card">
-            <a href="{% url 'photo' photo.pk %}"><img class="card-img-top" src="{{ photo.image.url }}" alt="Card image cap" height="250" width="160"></a>
+            <a href="{% url 'photo' photo.pk %}"><img class="card-img-top" src="{{ photo.image.url }}" alt="Card image cap" height="250" width="160" id="photo" onclick="resetImg()"></a>
             <div class="card-body">
                 <h5 class="card-title">Title: {{photo.label}}</h5>
                 <p class="card-text">Caption: {{photo.description}}</p>
@@ -30,6 +30,7 @@
                 <a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a>
                 <a href="{% url 'delete' photo.pk %}" class="btn btn-danger">Delete</a>
                 <a href="{% url 'update' photo.pk %}" class="btn btn-success">Update</a>
+                
             </div>
         </div>
     </div>
