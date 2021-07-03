@@ -7,11 +7,12 @@
     <div class="row">
         <h5>Categories</h5>
         <div class="filters">
-            <button class="btn btn-default filter-button" data-filter="all">All</button>
-            <button class="btn btn-default filter-button" data-filter="hdpe">Travel</button>
-            <button class="btn btn-default filter-button" data-filter="sprinkle">Fashion</button>
-            <button class="btn btn-default filter-button" data-filter="spray">Sports</button>
-            <button class="btn btn-default filter-button" data-filter="irrigation">Family</button>
+            <button class="btn btn-default filter-button" data-filter=""><a href="{% url 'photo_list' %}">All</a></button>
+            <button class="btn btn-default filter-button" data-filter=""><a href="{% url 'fashion' %}">Fashion</a></button>
+            <button class="btn btn-default filter-button" data-filter=""><a href="{% url 'travel' %}">Travel</a></button>
+            <button class="btn btn-default filter-button" data-filter=""><a href="{% url 'sports' %}">Sports</a></button>
+            <button class="btn btn-default filter-button" data-filter=""><a href="{% url 'family' %}">Family</a></button>
+            <button class="btn btn-default filter-button" data-filter=""><a href="{% url 'landscape' %}">Landscape</a></button>
             
         </div>
 
