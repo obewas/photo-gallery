@@ -4,14 +4,14 @@
 
   <div class="row">
     {% if photos%}
-      <h2>Found {{ photos |length }} result of searched term {{message}}</h2>
+      <h5 style="color: blue;">Found {{ photos |length }} result of searched term {{message}}</h5>
     {% else %}
-      <h2> Found 0 photos for the search term {{message}}</h2>
+      <h5> Found 0 photos for the search term {{message}}</h5>
     {% endif %}
 
   </div>
   {% if photos %}
-  <div class="row">
+  <div class="container"></div>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -23,8 +23,9 @@
 
           </tr>
         </thead>
-        {% for photo in photos %}
+       
         <tbody>
+          {% for photo in photos %}
           <tr>
             <td>{{photo.label}}</td>
             <td>{{photo.description}}</td>
@@ -33,7 +34,7 @@
             <td><a href="{% url 'photo' photo.pk %}" class="btn btn-primary">Details</a></td>
           </tr>
         </tbody>
-
+        {% endfor %}
       </table>
 
   
@@ -41,7 +42,7 @@
       <div class="col-sm-6 col-md-3">
           <h1>{{photo.category}}</h1>
       </div>
-    {% endfor %}
+    
   {% endif %}
   </div>
 </div>

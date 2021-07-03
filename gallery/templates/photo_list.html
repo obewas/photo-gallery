@@ -20,8 +20,8 @@
 <div class="card border-primary mb-3" style="width: 18rem;">
     <div class="card-group">
     
-        <div class="card" >
-            <img class="card-img-top" src="{{ photo.image.url }}" alt="Card image cap" height="250" width="160">
+        <div class="card">
+            <a href="{% url 'photo' photo.pk %}"><img class="card-img-top" src="{{ photo.image.url }}" alt="Card image cap" height="250" width="160"></a>
             <div class="card-body">
                 <h5 class="card-title">Title: {{photo.label}}</h5>
                 <p class="card-text">Caption: {{photo.description}}</p>
