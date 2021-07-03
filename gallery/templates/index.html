@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    #container { 
+        width: 100%;
+        margin: 0 auto;
+        }
+        
+        div#container p {
+        text-align: left; 
+        float: left; 
+        width: 25.3%;
+        margin: 2%;
+        padding: 0px 2% 10px 2%;
+        height: 500px;
+        background-color: gray;
+        }
+        
+        .columnh2 {
+        line-height: 200%;
+        font-weight: bold;
+        }
+        
+        img {
+            display: block;
+            margin: 32px auto;
+        }
+</style>
+
+{% for photo in photos %}
+<div id="container">
+    <p><span class="columnh2">{{photo.label}}</span><br />
+        A few lines of text<img src="{{photo.image.url}}" border="0" width="80" height="80" /></p>
+    
+
+{% endfor %}
+
+{% endblock %}

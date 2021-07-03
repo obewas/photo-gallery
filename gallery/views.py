@@ -104,7 +104,7 @@ def fashion(request):
     return render(request,'category/fashion.html', {'fashion':fashion})
 
 def family(request):
-    family_category = Category.objects.get(pk=4)
+    family_category = Category.objects.get(pk=2)
     family = Image.objects.filter(category=family_category)
     return render(request,'category/family.html', {'family':family})
 
@@ -119,3 +119,10 @@ def cat(request):
         'cats':cats
     }
     return render(request, 'cats.html', context)
+
+def index(request):
+    photos = Image.objects.all()
+    context = {
+        'photos':photos
+    }
+    return render(request, 'index.html', context)

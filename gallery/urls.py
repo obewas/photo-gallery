@@ -16,7 +16,8 @@ urlpatterns = [
     path('travel', views.travel, name='travel'),
     path('sports', views.sports, name='sports'),
     path('landscape', views.landscape, name='landscape'),
-    path('fashion', views.family, name='fashion'),
+    path('fashion', views.fashion, name='fashion'),
+    path('index', views.index, name='index')
     
 
 

@@ -11,11 +11,12 @@
         <h2>Fashion</h2>
         <div class="row">
         {% for photo in fashion %}
-        <img src="{{photo.image.url }}">
+        <img src="{{photo.image.url }}" width="160" height="180">
         
         {% empty %}
         <h3>There are currently no images under this category</h3>
         {% endfor %}
+        <a href="{% url 'photo_list' %}"><button class="btn btn-warning">Close</button></a>
       </div>
 
 {% endblock %}
