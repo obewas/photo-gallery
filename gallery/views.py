@@ -84,3 +84,4 @@ def search_results(request):
 def location_filter(request):
     filter = ImageFilter(request.GET, queryset=Image.objects.all())
     return render(request, 'filter.html', {'filter': filter})
+

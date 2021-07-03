@@ -10,6 +10,8 @@ urlpatterns = [
     path('update/<int:photo_id>/', views.update_photo,name='update'),
     path('get_photo_by_id/<int:photo_id>',views.get_photo_by_id, name='get_photo_by_id'),
     path('search/', views.search_results, name='search'),
-    path('location_filter', views.location_filter, name='location')
+    path('location_filter', views.location_filter, name='location'),
+
+
 
 ]

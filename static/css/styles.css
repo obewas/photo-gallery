@@ -75,7 +75,13 @@
     background-color: #42B32F;
 }
 .btn-default:active .filter-button:active
-{
-    background-color: #42B32F;
-    color: white;
 }
+img {
+max-width:100%;
+}
+.gallery {
+background-color: #dbddf1;
+padding: 80px 0;
+
+}
+
