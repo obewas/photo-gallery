@@ -142,7 +142,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media','photos')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/photos')
 
 # Configure Django App for Heroku.
 import django_heroku
