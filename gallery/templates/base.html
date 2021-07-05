@@ -34,6 +34,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="{% static 'js/index.js' %}"></script>
+    <script>
+    function getURL() {
+    alert("The URL of this page is: " + window.location.href);
+}
+</script>
      {% bootstrap_javascript %}
     {% endblock %}
 </body>
