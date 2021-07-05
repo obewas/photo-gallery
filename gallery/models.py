@@ -25,6 +25,7 @@ class Category(models.Model):
 class Location(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.name
@@ -43,6 +44,7 @@ class Location(models.Model):
         self.delete()
 
 class Image(models.Model):
+    alis= models.CharField(max_length=100, blank=True, null=True)
     label = models.CharField(max_length=100)
     image = models.ImageField(upload_to="photos/", default='logo.png')
     description = models.TextField()
@@ -50,9 +52,10 @@ class Image(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     year_taken = models.DateField(auto_now_add=False, null=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
+  
 
     def __str__(self):
-        return self.label 
+        return self.label
 
     class Meta:
         ordering = ['-uploaded_at']
