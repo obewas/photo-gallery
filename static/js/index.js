@@ -12,3 +12,12 @@ img = document.getElementById("photo");
         img.style.transform = "scale(1)";
         img.style.transition = "transform 0.25s ease";
       }
+
+function copyToClipboard(text) {
+  var input = document.body.appendChild(document.createElement("input"));
+  input.value = text;
+  input.focus();
+  input.select();
+  document.execCommand('copy');
+  input.parentNode.removeChild(input);
+}
