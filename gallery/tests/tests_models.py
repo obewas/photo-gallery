@@ -19,10 +19,14 @@ class LocationTestClass(TestCase):
         self.assertTrue(isinstance(self.location,Location))
 
 class ImageTestClass(TestCase):
-    def setUp(self):
-        self.image = Image.objects.create(label='Best', image="shoes.jpg",description='test',
-        category=Category.name, location=Location.name, year_taken='2012-02-12')
+    def setUp(cls):
+        cls.location = 'Kisumu'
+        cls.location = Location.objects.create(name=cls.location)
+        cls.category = 'Family'
+        cls.category = Category.objects.create(name=cls.category)
+        cls.image = Image.objects.create(label='Best', image="shoes.jpg",description='test',
+        category=cls.category, location=cls.location, year_taken='2012-02-12')
 
     # Testing  instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.image,Image))
+        self.assertTrue(isinstance(self.image, Image))

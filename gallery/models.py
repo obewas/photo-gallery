@@ -10,12 +10,37 @@ class Category(models.Model):
         
         return self.name
 
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+    
+    
+    def save_category(self):
+            self.save()
+    
+    def delete_category(self):
+        self.delete()
+
 class Location(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
+        class Meta:
+            ordering = ["name"]
+            verbose_name = "Location"
+            verbose_name_plural = "Locations"
+        
+        
+    def save_location(self):
+        self.save()
+        
+    
+    def delete_location(self):
+        self.delete()
 
 class Image(models.Model):
     label = models.CharField(max_length=100)

@@ -84,3 +84,45 @@ def search_results(request):
 def location_filter(request):
     filter = ImageFilter(request.GET, queryset=Image.objects.all())
     return render(request, 'filter.html', {'filter': filter})
+
+
+def sports(request):
+    sports_category = Category.objects.get(pk=4)
+    sports = Image.objects.all().filter(category=sports_category)
+    return render(request,'category/sports.html', {'sports':sports})
+
+
+def travel(request):
+    travel_category = Category.objects.get(pk=1)
+    travel = Image.objects.filter(category=travel_category)
+    return render(request,'category/travel.html', {'travel':travel})
+
+
+def fashion(request):
+    fashion_category = Category.objects.get(pk=5)
+    fashion = Image.objects.filter(category=fashion_category)
+    return render(request,'category/fashion.html', {'fashion':fashion})
+
+def family(request):
+    family_category = Category.objects.get(pk=2)
+    family = Image.objects.filter(category=family_category)
+    return render(request,'category/family.html', {'family':family})
+
+def landscape(request):
+    landscape_category = Category.objects.get(pk=3)
+    landscape = Image.objects.filter(category=landscape_category)
+    return render(request, 'category/landscape.html', {'landscape':landscape})
+
+def cat(request):
+    cats = Category.objects.all()
+    context = {
+        'cats':cats
+    }
+    return render(request, 'cats.html', context)
+
+def index(request):
+    photos = Image.objects.all()
+    context = {
+        'photos':photos
+    }
+    return render(request, 'index.html', context)
