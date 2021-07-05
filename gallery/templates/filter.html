@@ -9,8 +9,9 @@
     </form>
     <ul>
         {% for photo in filter.queryset %}
+        <P>{{photo}}</P>
         <li>
-            <a href="{% url 'photo' photo.pk %}"></a>
+            <a href="{% url 'photo' photo.pk %}">Close</a>
         </li>
         {% endfor %}
     </ul>
