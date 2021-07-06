@@ -28,7 +28,7 @@
       <h6>{{photo.label}}</h6>
       <a href="{% url 'photo' photo.pk %}"><img src="{{photo.image.url}}" alt="" class="img-fluid" style="height: 150px; width:80%;"></a>
       <p class="mt-3">{{photo.description}}</p>
-      <p>Posted: {{photo.year_taken | timesince}} ago.</p>
+      <p>Taken: {{photo.year_taken | timesince}} ago in {{photo.location}}</p>
       <p>Category:{{photo.category}}</p>
       <a href="{% url 'photo' photo.pk %}" class="btn btn-primary btn-sm" >Link</a>
       <a href="{% url 'delete' photo.pk %}" class="btn btn-danger btn-sm">Delete</a>

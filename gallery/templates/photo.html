@@ -7,6 +7,7 @@
     <div class="card-body">
       <h5 class="card-title">{{photo.label}}</h5>
       <p class="card-text">{{photo.description}}</p>
+      <p class="card-text">{{photo.location}} in {{photo.year_taken}}</p>
       <a href="{% url 'photo_list' %}" class="btn btn-primary">Close</a>
 
     </div>
