@@ -8,7 +8,7 @@ This project aims to create a responsive photo gallery with different categories
 Visuals:
 
 To get a quick view of the project use this link to get to the website 
-https://fast-dawn-84591.herokuapp.com/
+https://photogallery-jp.herokuapp.com/
 
 Installation:
 
